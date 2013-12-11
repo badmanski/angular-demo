@@ -4,6 +4,10 @@ class NotesController < ApplicationController
   before_action :set_note, only: [:update, :destroy]
 
   def index
+    respond_to do |format|
+      format.html
+      format.json { render json: Note.all }
+    end
   end
 
   def create
