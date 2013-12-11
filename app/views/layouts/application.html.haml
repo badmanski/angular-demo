@@ -3,7 +3,12 @@
   %head
     %title AngularDemo
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css", "data-turbolinks-track" => true
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
-    = yield
+    %nav.navbar.navbar-inverse.navbar-static-top
+      .navbar-header
+        = link_to 'Angular JS Demo', '#', class: 'navbar-brand'
+    .container
+      = yield
