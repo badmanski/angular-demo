@@ -1,5 +1,5 @@
 !!!
-%html
+%html{ 'ng-app' => 'notesApp' }
   %head
     %title AngularDemo
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
@@ -13,5 +13,5 @@
     %nav.navbar.navbar-inverse.navbar-static-top
       .navbar-header
         = link_to 'Angular JS Demo', '#', class: 'navbar-brand'
-    .container
+    .container{ 'ng-controller' => 'NotesCtrl' }
       = yield

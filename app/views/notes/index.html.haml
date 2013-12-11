@@ -1,1 +1,10 @@
-%h1.page-header Notes
+%h1.page-header {{test}}
+.col-md-6
+  .list-group
+    .list-group-item{ 'ng-repeat' => 'note in notes' }
+      {{ note.content }}
+      .close{ 'ng-click' => 'destroyNote(note.id)' } &times;
+  %form.form-inline{ 'ng-submit' => 'createNote()' }
+    .form-group
+      = text_field_tag nil, nil, placeholder: 'New note', class: 'form-control', 'ng-model' => 'newNote.content'
+    = submit_tag 'Add', class: 'btn btn-default'
